@@ -8,9 +8,9 @@ const server=http.createServer((req,res)=>{
     }
 
 })
-server.listen(5002,()=>{
-    console.log("server running")
-})
+// server.listen(5002,()=>{
+//     console.log("server running")
+// })
 //fsModules
 const fs=require("fs");
 fs.writeFile("abc.txt","abc",(err)=>{
@@ -56,3 +56,32 @@ fs.writeFile("text.txt","abc",(err)=>{
 const path1=require("path");
 const filename=path1.join(__dirname,"text.txt")
 console.log(filename)
+
+const data12=require("http");
+
+//http module
+
+
+const data={
+    name:"afroz",
+    age:23
+}
+const p=data12.createServer((req,res)=>{
+    res.writeHead(200,{
+        "Content-Type":"application/json"
+    })
+    if(req.url==="/name"){
+        res.end(JSON.stringify(data.name))
+    }
+    else if(req.url==="/age"){
+      res.end(JSON.stringify(data.age))
+    }else{
+        res.end(JSON.stringify(data))
+    }
+    console.log(req.method)
+})
+p.listen(5000,()=>{
+    console.log("start server")
+})
+
+
