@@ -4,6 +4,19 @@ const product={
     name:"laptop",
     price:40000
 }
+// 1)req.body concept//
+// example 1)
+app.use(express.json());
+
+app.post("/student",(req,res)=>{
+    console.log(req.body);
+    const {name,age}=req.body;
+    res.send(`student is ${name} and age is ${age}`)
+})
+app.listen(9000,()=>{
+    console.log("server running on port 9000")
+})
+// end of example//
 app.get("/",(req,res)=>{
     res.send("home")
 })
@@ -33,10 +46,11 @@ res.send("iam delete method")
 })
 
 const users=["ali","appi","appu"];
-app.get("/user",(req,res)=>{
+app.get("/used",(req,res)=>{
     res.send(users)
 })
 
 
 app.listen(3009)
+
 

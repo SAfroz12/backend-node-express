@@ -84,4 +84,28 @@ p.listen(5000,()=>{
     console.log("start server")
 })
 
+// Express Routes
+// 1)
+const express=require("express");
+const app=express();
+ const handle=require("./routes/userRoutes")
+ app.use("/userone",handle);
 
+ const handled=require("./routes/productRoutes");
+ app.use("/products",handled)
+ 
+ app.use((req,res,next)=>{
+     res.status(404).send("its not found")
+    })
+    app.use((err,req,res,next)=>{
+        res.status(500).send({
+            status:"failed",
+            message:err.message
+        })
+    })
+    
+    app.listen(1000,()=>{
+       console.log("server is running")
+    })
+
+ 
