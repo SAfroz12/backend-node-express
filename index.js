@@ -4,7 +4,7 @@ const server=http.createServer((req,res)=>{
 
         res.end("hello Backend");
     }else{
-        res.end("iam good baby")
+        res.end("iam good ")
     }
 
 })
@@ -80,9 +80,9 @@ const p=data12.createServer((req,res)=>{
     }
     console.log(req.method)
 })
-p.listen(5000,()=>{
-    console.log("start server")
-})
+// p.listen(5000,()=>{
+//     console.log("start server")
+// })
 
 // Express Routes
 // 1)

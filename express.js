@@ -13,9 +13,9 @@ app.post("/student",(req,res)=>{
     const {name,age}=req.body;
     res.send(`student is ${name} and age is ${age}`)
 })
-app.listen(9000,()=>{
-    console.log("server running on port 9000")
-})
+// app.listen(9000,()=>{
+//     console.log("server running on port 9000")
+// })
 // end of example//
 app.get("/",(req,res)=>{
     res.send("home")
@@ -51,6 +51,6 @@ app.get("/used",(req,res)=>{
 })
 
 
-app.listen(3009)
+// app.listen(3009)
 
 

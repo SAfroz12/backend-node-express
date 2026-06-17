@@ -34,8 +34,8 @@ app.delete("/students/:id",(req,res)=>{
     students=students.filter((s)=>s.id!==studentId);
     res.send("student deleted")
 })
-app.listen(1001, () => {
+// app.listen(1001, () => {
 
-   console.log("Server running");
+//    console.log("Server running");
 
-});
+// });

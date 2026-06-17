@@ -1,7 +1,7 @@
 
 //middlewares//
- const express=require("express");
- const app=express();
+//  const express=require("express");
+//  const app=express();
  const middleware=(req,res,next)=>{
     console.log("middleware is running");
 
@@ -12,7 +12,7 @@
     res.send("started middleware")
  })
 
- app.listen(3900)
+//  app.listen(3900)
 // 1) without middleware
 
 app.get("/profiled",(req,res)=>{
@@ -23,7 +23,7 @@ app.get("/profiled",(req,res)=>{
     }
     res.send("its authorized")
 })
-app.listen(3000)
+// app.listen(3000)
 // 2)
 app.get("/dash",(req,res)=>{
     console.log("request  recieved");
@@ -34,7 +34,7 @@ app.get("/dash",(req,res)=>{
     res.send("response sent")
 
 })
-app.listen(3008)
+// app.listen(3008)
 
 
 // with middleware
@@ -67,7 +67,7 @@ app.use(auth1,auth2)
 app.get("/auth",auth1,auth2,(req,res)=>{
     res.send("auth1 and auth2 are alive ")
 })
-app.listen(2000)
+// app.listen(2000)
 
 //built-in middlewares//
 
@@ -76,7 +76,7 @@ app.listen(2000)
 //1)express.json();
 //2)express.urlencoded({extended:true})
 //3)express.static("public")
-app.use(express.json());
+// app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(express.static("public"))
 app.post("/user",(req,res)=>{
