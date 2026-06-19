@@ -1,9 +1,10 @@
 const express=require("express");
-
 const router=express.Router();
-const { postRouter,
-    getRouter}=require("../controllers/studentController");
+const {postOne,getOne,getName,putOne,deleteOne}=require("../controllers/studentController")
+router.post("/",postOne);
+router.get("/",getOne);
+router.get("/name/:name",getName);
+router.put("/:id",putOne);
+router.delete("/:id",deleteOne);
 
-    router.post("/",postRouter);
-    router.get("/",getRouter);
-  module.exports=router;
+module.exports=router;
