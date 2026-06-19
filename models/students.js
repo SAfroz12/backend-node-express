@@ -3,15 +3,25 @@ const studentSchema=new mongoose.Schema({
 
   name:{
     type:String,
-    required:true
+    required:true,
+    unique:true
+
   },
   age:{
     type:Number,
-    required:true
+    required:true,
+    min:18,
+    max:90
   },
   email:{
     type:String,
-    required:true
+    required:true,
+    unique:true
+  },
+
+  status:{
+    type:String,
+    default:'active'
   }
 
 })
