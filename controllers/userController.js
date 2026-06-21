@@ -4,7 +4,6 @@ const jwt=require("jsonwebtoken");
 const post =async(req,res)=>{
     const {name,email,password}=req.body;
     const hashpassword=await bcyrpt.hash(password,10)
-
     const user=await User.create({
         name,
         email,
@@ -32,8 +31,14 @@ const loginpost=async(req,res)=>{
         message:"logged in successfully",
         token
     })
+
+}
+const profile= async (req,res)=>{
+    const user=await User.findById(req.user.id).select("-password")
+     res.status(200).json(user)
 }
 module.exports={
     post,
-    loginpost
+    loginpost,
+    profile
 }

@@ -8,4 +8,4 @@ router.get("/name/:name",authmiddleware,getName);
 router.put("/:id",authmiddleware,putOne);
 router.delete("/:id",authmiddleware,adminMiddleware,deleteOne);
 
-module.exports=router;
+module.exports=router;  
