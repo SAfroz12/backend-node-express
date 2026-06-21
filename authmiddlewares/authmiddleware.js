@@ -6,7 +6,10 @@ const authmiddleware=(req,res,next)=>{
          const token=req.headers.authorization;
         console.log(token)
       const decoded=jwt.verify(token,"mysecretkey");
-      console.log(decoded.role)
+      req.user=decoded;
+      console.log(decoded)
+    
+    //   console.log(decoded.role)
       next()
      }  catch(err){
         return res.status(401).json({
@@ -14,4 +17,12 @@ const authmiddleware=(req,res,next)=>{
         })
      }
 }
-module.exports=authmiddleware
+const adminMiddleware=(req,res,next)=>{
+    if(req.user.role!=="admin"){
+        return res.status(403).json({
+            message:"access denied"
+        })
+    }
+    next()
+}
+module.exports={authmiddleware,adminMiddleware}
