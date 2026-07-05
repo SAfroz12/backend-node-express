@@ -8,7 +8,86 @@ const server=http.createServer((req,res)=>{
     }
 
 })
-// server.listen(5002,()=>{
+const http = require("http");
+
+const server = http.createServer((req, res) => {
+
+    if(req.url === "/products" && req.method === "GET"){
+
+    }
+
+    else if(req.url === "/products" && req.method === "POST"){
+
+    }
+
+    else if(req.url === "/login" && req.method === "POST"){
+
+    }
+
+    else if(req.url === "/register" && req.method === "POST"){
+
+    }
+
+});
+
+
+// another problem 
+let body = "";
+
+req.on("data",(chunk)=>{
+
+    body += chunk;
+
+});
+
+req.on("end",()=>{
+
+    const data = JSON.parse(body);
+
+}); 
+
+// You have to manually:
+
+// Read chunks
+// Join them
+// Convert to string
+// Parse JSON
+
+// Lots of extra work.
+// this is without express;
+// app.use(express.json());
+
+// console.log(req.body);
+
+// this is with express
+
+// Sending Response
+
+// Without Express
+
+// res.statusCode = 200;
+
+// res.setHeader("Content-Type","application/json");
+
+// res.end(JSON.stringify(user));
+
+// With Express
+
+// res.status(200).json(user);
+
+// One line.
+
+
+// Middleware
+
+// Node.js doesn't provide middleware support.
+
+// Express provides:
+
+// app.use(authMiddleware);
+
+// Now every request passes through middleware automatically.
+// // server.listen(5002,()=>{
 //     console.log("server running")
 // })
 //fsModules
