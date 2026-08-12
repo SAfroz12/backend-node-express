@@ -15,3 +15,5 @@ app.use('/users',userRoutes)
 app.listen(3000,()=>{
     console.log("server connected")
 })
+
+
