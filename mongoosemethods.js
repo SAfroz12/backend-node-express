@@ -72,7 +72,7 @@ const student = await Student.findByIdAndUpdate(
       name,
       age,
       email
-    }
+    },{new:true},
 );
 // suppose db contains 
 {

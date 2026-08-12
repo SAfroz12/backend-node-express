@@ -36,6 +36,6 @@ app.post("/verify-otp", async(req, res) => {
         message: "otp verified"
     })
 })
-app.listen(3000, () => {
-    console.log("server is running")
-})  
+// app.listen(3000, () => {
+//     console.log("server is running")
+// })  
